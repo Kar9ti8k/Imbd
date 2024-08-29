@@ -3,6 +3,8 @@ import React from 'react'
 import MenuItem from './MenuItem'
 import { AiFillHome } from 'react-icons/ai'
 import { FcAbout } from 'react-icons/fc'
+import Link from 'next/link'
+import DarkMode from './DarkMode'
 const Hedaer = () => {
   return (
     <div className='flex justify-between items-center p-3 max-w-6xl mx-auto'>
@@ -10,11 +12,14 @@ const Hedaer = () => {
         <MenuItem title='Home' address='/' Icon={AiFillHome} />
         <MenuItem title='About' address='/About' Icon={FcAbout} />
       </div>
-      <div className='flex gap-1 items-center'>
-        <span className='text-2xl font-bold bg-amber-500 py-1 px-1 rounded-[0.5rem] '>
-          IMDB
-        </span>
-        <p className='text-2xl hidden sm:inline'>Clone</p>
+      <div className='flex items-center gap-4'>
+        <DarkMode />
+        <Link href={'/'} className='flex gap-1 items-center'>
+          <span className='text-2xl font-bold bg-amber-500 py-1 px-1 rounded-[0.5rem] '>
+            IMDB
+          </span>
+          <p className='text-2xl hidden sm:inline'>Clone</p>
+        </Link>
       </div>
     </div>
   )

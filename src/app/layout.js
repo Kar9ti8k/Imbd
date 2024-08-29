@@ -1,6 +1,9 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Hedaer from './component/Hedaer'
+import { ThemeProvider } from 'next-themes'
+import Providers from './providers'
+import NavBar from './component/NavBar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -12,8 +15,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <body className={inter.className}>
-        <Hedaer />
-        {children}
+        <Providers>
+          <Hedaer />
+          <NavBar />
+          {children}
+        </Providers>
       </body>
     </html>
   )
